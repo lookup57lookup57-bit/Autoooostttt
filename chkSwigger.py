@@ -732,7 +732,7 @@ async def start_command(update: Update, context: CallbackContext):
     
     if not await check_channel_membership(user_id, context):
         keyboard = [
-            [InlineKeyboardButton("🔥 𝙅𝙊𝙄𝙉 𝙊𝙐𝙍 𝘾𝙃𝘼𝙉𝙉𝙀𝙇 🔥", url=f"https://t.me/+xwUAM00rj0oxMGY1")],
+            [InlineKeyboardButton("🔥 𝙅𝙊𝙄𝙉 𝙊𝙐𝙍 𝘾𝙃𝘼𝙉𝙉𝙀𝙇 🔥", url=f"https://t.me/+7gxxaloQVbwwNjdl")],
             [InlineKeyboardButton("✅ 𝙄'𝙑𝙀 𝙅𝙊𝙄𝙉𝙀𝘿", callback_data="check_join")]
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
