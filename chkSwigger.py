@@ -13,7 +13,7 @@ from datetime import datetime, timedelta
 # Bot Configuration
 TOKEN = "8298198503:AAE-ZhxSTvX_NLdMmOXDZL-8LJd2y44AJIk" #Chage With Your Actul Bot Tokan#
 OWNER_ID = 7323192068 #Chage Owner Id #
-CHANNEL_USERNAME = "@Cyber_World_Xdd" #and change channel username #
+CHANNEL_USERNAME = "Cyber_World_Xdddd" #and change channel username #
 
 # User Limits and Cooldowns
 FREE_LIMIT = 300
@@ -312,7 +312,7 @@ async def handle_document(update: Update, context: CallbackContext):
     
     try:
         # Download and parse the file
-        await update.message.reply_text("𝘼𝙡𝙡 𝘾𝙘𝙨 𝘼𝙧𝙚 𝘾𝙝𝙚𝙘𝙠𝙞𝙣𝙜... 𝙗𝙤𝙩 𝙗𝙮 @cyber_world_x")
+        await update.message.reply_text("𝘼𝙡𝙡 𝘾𝙘𝙨 𝘼𝙧𝙚 𝘾𝙝𝙚𝙘𝙠𝙞𝙣𝙜... 𝙗𝙤𝙩 𝙗𝙮 Cyber_World_Xdd")
         file = await document.get_file()
         file_content = await file.download_as_bytearray()
         
@@ -359,8 +359,8 @@ Please ensure your file contains CCs in this format:
 ☑️ 𝘾𝙖𝙧𝙙𝙨 𝙁𝙤𝙪𝙣𝙙 ➜ `{total_ccs}`
 💎 𝙔𝙤𝙪𝙧 𝘾𝙘 𝙇𝙞𝙢𝙞𝙩 ➜ `{user_limit}` CCs
 
-💎 𝘽𝙤𝙩 𝘽𝙮 ➜ @cyber_world_x
-☑️ 𝙅𝙤𝙞𝙣 𝙊𝙪𝙧 𝘾𝙝𝙖𝙣𝙣𝙚𝙡 𝘼𝙣𝙙 𝙎𝙪𝙥𝙥𝙤𝙧𝙩 ➜ @cyber_world_x
+💎 𝘽𝙤𝙩 𝘽𝙮 ➜ Cyber_World_Xdd
+☑️ 𝙅𝙤𝙞𝙣 𝙊𝙪𝙧 𝘾𝙝𝙖𝙣𝙣𝙚𝙡 𝘼𝙣𝙙 𝙎𝙪𝙥𝙥𝙤𝙧𝙩 ➜ Cyber_World_Xdd
 
 𝘾𝙡𝙞𝙘𝙠 𝙊𝙣 𝘾𝙝𝙚𝙘𝙠 𝘾𝙖𝙧𝙙𝙨 𝙏𝙤 𝘾𝙝𝙚𝙘𝙠 𝙔𝙤𝙪𝙧 𝘾𝙘𝙨 😎
         """
@@ -743,7 +743,7 @@ async def start_command(update: Update, context: CallbackContext):
 
 ⚠️ 𝙁𝙞𝙧𝙨𝙩 𝙅𝙤𝙞𝙣 𝙊𝙪𝙧 𝘾𝙝𝙖𝙣𝙣𝙚𝙡 𝘽𝙧𝙤 😎
 
-💎 𝗖𝗵𝗮𝗻𝗻𝗲𝗹: @cyber_world_x ⏳
+💎 𝗖𝗵𝗮𝗻𝗻𝗲𝗹: Cyber_World_Xdd ⏳
         """
         
         await update.message.reply_text(start_text, reply_markup=reply_markup)
@@ -769,7 +769,7 @@ async def start_command(update: Update, context: CallbackContext):
 
 😎 𝙐𝙨𝙚 /mtxt 𝘾𝙤𝙢𝙢𝙖𝙣𝙙 𝙁𝙤𝙧 𝙈𝙖𝙨𝙨 𝘾𝙝𝙠 𝙄𝙣𝙛𝙤𝙧𝙢𝙖𝙩𝙞𝙤𝙣 
 
-💎 𝗖𝗿𝗲𝗱𝗶𝘁𝘀 ➜ @cyber_world_x
+💎 𝗖𝗿𝗲𝗱𝗶𝘁𝘀 ➜ Cyber_World_Xdd
     """
     
     await update.message.reply_text(welcome_text)
@@ -805,7 +805,7 @@ async def handle_join_callback(update: Update, context: CallbackContext):
 
 😎 𝙐𝙨𝙚 /mtxt 𝘾𝙤𝙢𝙢𝙖𝙣𝙙 𝙁𝙤𝙧 𝙈𝙖𝙨𝙨 𝘾𝙝𝙠 𝙄𝙣𝙛𝙤𝙧𝙢𝙖𝙩𝙞𝙤𝙣 
 
-💎 𝗖𝗿𝗲𝗱𝗶𝘁𝘀 ➜ @cyber_world_x
+💎 𝗖𝗿𝗲𝗱𝗶𝘁𝘀 ➜ Cyber_World_Xdd
     """
     
     await query.edit_message_text(welcome_text)
@@ -877,7 +877,7 @@ async def chk_command(update: Update, context: CallbackContext):
 🏷️ 𝗧𝘆𝗽𝗲: {card_type}
 🆔 𝗕𝗜𝗡: {bin_number}
 
-⏳𝘽𝙤𝙩 𝘽𝙮 ➜ @cyber_world_x
+⏳𝘽𝙤𝙩 𝘽𝙮 ➜ Cyber_World_Xdd
     """, parse_mode='Markdown')
     
     status, process_time, api_response = check_cc(cc_number, month, year, cvv)
