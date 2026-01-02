@@ -13,7 +13,7 @@ from datetime import datetime, timedelta
 # Bot Configuration
 TOKEN = "8298198503:AAE-ZhxSTvX_NLdMmOXDZL-8LJd2y44AJIk" #Chage With Your Actul Bot Tokan#
 OWNER_ID = 7323192068 #Chage Owner Id #
-CHANNEL_USERNAME = "@Cyber_World_Xdddd" #and change channel username #
+CHANNEL_USERNAME = "@Cyber_World_Xdd" #and change channel username #
 
 # User Limits and Cooldowns
 FREE_LIMIT = 300
@@ -312,7 +312,7 @@ async def handle_document(update: Update, context: CallbackContext):
     
     try:
         # Download and parse the file
-        await update.message.reply_text("𝘼𝙡𝙡 𝘾𝙘𝙨 𝘼𝙧𝙚 𝘾𝙝𝙚𝙘𝙠𝙞𝙣𝙜... 𝙗𝙤𝙩 𝙗𝙮 @Cyber_World_Xdddd")
+        await update.message.reply_text("𝘼𝙡𝙡 𝘾𝙘𝙨 𝘼𝙧𝙚 𝘾𝙝𝙚𝙘𝙠𝙞𝙣𝙜... 𝙗𝙤𝙩 𝙗𝙮 @Cyber_World_Xdd")
         file = await document.get_file()
         file_content = await file.download_as_bytearray()
         
