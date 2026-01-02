@@ -13,13 +13,13 @@ from datetime import datetime, timedelta
 # Bot Configuration
 TOKEN = "8298198503:AAE-ZhxSTvX_NLdMmOXDZL-8LJd2y44AJIk" #Chage With Your Actul Bot Tokan#
 OWNER_ID = 7323192068 #Chage Owner Id #
-CHANNEL_USERNAME = "@Cyber_World_Xdd" #and change channel username #
+CHANNEL_USERNAME = "@Cyber_World_Xdddd" #and change channel username #
 
 # User Limits and Cooldowns
 FREE_LIMIT = 300
-PREMIUM_LIMIT = 5000
-OWNER_LIMIT = 100000
-COOLDOWN_TIME = 30  # 5 minutes
+PREMIUM_LIMIT = 600
+OWNER_LIMIT = 1200
+COOLDOWN_TIME = 300  # 5 minutes
 
 # Store user files in memory
 user_files = {}
@@ -135,13 +135,10 @@ def set_cooldown(user_id):
     conn.close()
 
 # Channel check function
-CHANNEL_ID = -1003555019979
-
 async def check_channel_membership(user_id, context):
     try:
-        member = await context.bot.get_chat_member(chat_id=CHANNEL_ID, user_id=user_id)
-        logger.info(f"Membership status for {user_id}: {member.status}")
-        return member.status in ['member', 'administrator', 'creator']
+        member = await context.bot.get_chat_member(chat_id=CHANNEL_USERNAME, user_id=user_id)
+        return member.status not in ['left', 'kicked']
     except Exception as e:
         logger.error(f"Channel check error: {e}")
         return False
@@ -315,7 +312,7 @@ async def handle_document(update: Update, context: CallbackContext):
     
     try:
         # Download and parse the file
-        await update.message.reply_text("𝘼𝙡𝙡 𝘾𝙘𝙨 𝘼𝙧𝙚 𝘾𝙝𝙚𝙘𝙠𝙞𝙣𝙜... 𝙗𝙤𝙩 𝙗𝙮 @Tyrant_Xd")
+        await update.message.reply_text("𝘼𝙡𝙡 𝘾𝙘𝙨 𝘼𝙧𝙚 𝘾𝙝𝙚𝙘𝙠𝙞𝙣𝙜... 𝙗𝙤𝙩 𝙗𝙮 @Cyber_World_Xdddd")
         file = await document.get_file()
         file_content = await file.download_as_bytearray()
         
@@ -362,7 +359,7 @@ Please ensure your file contains CCs in this format:
 ☑️ 𝘾𝙖𝙧𝙙𝙨 𝙁𝙤𝙪𝙣𝙙 ➜ `{total_ccs}`
 💎 𝙔𝙤𝙪𝙧 𝘾𝙘 𝙇𝙞𝙢𝙞𝙩 ➜ `{user_limit}` CCs
 
-💎 𝘽𝙤𝙩 𝘽𝙮 ➜ @Tyrant_Xd
+💎 𝘽𝙤𝙩 𝘽𝙮 ➜ @Cyber_World_Xdd
 ☑️ 𝙅𝙤𝙞𝙣 𝙊𝙪𝙧 𝘾𝙝𝙖𝙣𝙣𝙚𝙡 𝘼𝙣𝙙 𝙎𝙪𝙥𝙥𝙤𝙧𝙩 ➜ @Cyber_World_Xdd
 
 𝘾𝙡𝙞𝙘𝙠 𝙊𝙣 𝘾𝙝𝙚𝙘𝙠 𝘾𝙖𝙧𝙙𝙨 𝙏𝙤 𝘾𝙝𝙚𝙘𝙠 𝙔𝙤𝙪𝙧 𝘾𝙘𝙨 😎
@@ -732,14 +729,14 @@ async def start_command(update: Update, context: CallbackContext):
     
     if not await check_channel_membership(user_id, context):
         keyboard = [
-            [InlineKeyboardButton("🔥 𝙅𝙊𝙄𝙉 𝙊𝙐𝙍 𝘾𝙃𝘼𝙉𝙉𝙀𝙇 🔥", url=f"https://t.me/+7gxxaloQVbwwNjdl")],
+            [InlineKeyboardButton("🔥 𝙅𝙊𝙄𝙉 𝙊𝙐𝙍 𝘾𝙃𝘼𝙉𝙉𝙀𝙇 🔥", url=f"https://t.me/{CHANNEL_USERNAME[1:]}")],
             [InlineKeyboardButton("✅ 𝙄'𝙑𝙀 𝙅𝙊𝙄𝙉𝙀𝘿", callback_data="check_join")]
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
         
         start_text = """
 ╔═══════════════════════╗
-   𝑊𝑒𝑙𝑐𝑜𝑚𝑒 𝑇𝑜 𝑇𝑦𝑟𝑎𝑛𝑡 𝐶ℎ𝑒𝑐𝑘𝑒𝑟 ﮩ٨ـﮩ 
+  𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙏𝙤 𝙏𝙮𝙧𝙖𝙣𝙩 𝙈𝙖𝙨𝙨 𝘾𝙝𝙚𝙘𝙠𝙚𝙧
 ╚═══════════════════════╝
 
 🔒 𝗔𝗖𝗖𝗘𝗦𝗦 𝗗𝗘𝗡𝗜𝗘𝗗
@@ -755,7 +752,7 @@ async def start_command(update: Update, context: CallbackContext):
     user_status = get_user_status(user_id)
     welcome_text = f"""
 ╔════════════════════════╗      
-   𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙏𝙤 𝙊𝙍𝙄𝙊𝙉 𝙈𝙖𝙨𝙨 𝘾𝙝𝙚𝙘𝙠𝙚𝙧 
+  𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙏𝙤 𝙏𝙮𝙧𝙖𝙣𝙩 𝙈𝙖𝙨𝙨 𝘾𝙝𝙚𝙘𝙠𝙚𝙧
 ╚════════════════════════╝
 
 ✅ 𝗔𝗰𝗰𝗲𝘀𝘀 𝗚𝗿𝗮𝗻𝘁𝗲𝗱
@@ -772,7 +769,7 @@ async def start_command(update: Update, context: CallbackContext):
 
 😎 𝙐𝙨𝙚 /mtxt 𝘾𝙤𝙢𝙢𝙖𝙣𝙙 𝙁𝙤𝙧 𝙈𝙖𝙨𝙨 𝘾𝙝𝙠 𝙄𝙣𝙛𝙤𝙧𝙢𝙖𝙩𝙞𝙤𝙣 
 
-💎 𝗖𝗿𝗲𝗱𝗶𝘁𝘀 ➜ @Tyrant_Xd
+💎 𝗖𝗿𝗲𝗱𝗶𝘁𝘀 ➜ @Cyber_World_Xdd
     """
     
     await update.message.reply_text(welcome_text)
@@ -791,7 +788,7 @@ async def handle_join_callback(update: Update, context: CallbackContext):
     user_status = get_user_status(user_id)
     welcome_text = f"""
 ╔════════════════════════╗      
-   𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙏𝙤 𝙊𝙍𝙄𝙊𝙉 𝙈𝙖𝙨𝙨 𝘾𝙝𝙚𝙘𝙠𝙚𝙧 😎
+  𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙏𝙤 𝙏𝙮𝙧𝙖𝙣𝙩 𝙈𝙖𝙨𝙨 𝘾𝙝𝙚𝙘𝙠𝙚𝙧😎
 ╚════════════════════════╝
 
 ✅ 𝗔𝗰𝗰𝗲𝘀𝘀 𝗚𝗿𝗮𝗻𝘁𝗲𝗱
@@ -808,7 +805,7 @@ async def handle_join_callback(update: Update, context: CallbackContext):
 
 😎 𝙐𝙨𝙚 /mtxt 𝘾𝙤𝙢𝙢𝙖𝙣𝙙 𝙁𝙤𝙧 𝙈𝙖𝙨𝙨 𝘾𝙝𝙠 𝙄𝙣𝙛𝙤𝙧𝙢𝙖𝙩𝙞𝙤𝙣 
 
-💎 𝗖𝗿𝗲𝗱𝗶𝘁𝘀 ➜ @Tyrant_Xd
+💎 𝗖𝗿𝗲𝗱𝗶𝘁𝘀 ➜ @Cyber_World_Xdd
     """
     
     await query.edit_message_text(welcome_text)
@@ -880,7 +877,7 @@ async def chk_command(update: Update, context: CallbackContext):
 🏷️ 𝗧𝘆𝗽𝗲: {card_type}
 🆔 𝗕𝗜𝗡: {bin_number}
 
-⏳𝘽𝙤𝙩 𝘽𝙮 ➜ @Tyrant_Xd
+⏳𝘽𝙤𝙩 𝘽𝙮 ➜ @Cyber_World_Xdd
     """, parse_mode='Markdown')
     
     status, process_time, api_response = check_cc(cc_number, month, year, cvv)
