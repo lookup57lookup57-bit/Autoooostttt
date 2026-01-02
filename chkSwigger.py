@@ -724,29 +724,29 @@ async def handle_custom_commands(update: Update, context: CallbackContext):
             await stats_command(update, context)
 
 # Start command
-async def start_command(update: Update, context: CallbackContext):
+async def start_command(update: Update, context):
     user_id = update.effective_user.id
     
-    if not await check_channel_membership(user_id, context):
+    if await check_channel_membership(user_id, context):
+        # yahan tera original welcome message daal dena
+        await show_main_welcome(update, context)  # agar show_main_welcome bana hai to
+    else:
         keyboard = [
-            [InlineKeyboardButton("🔥 𝙅𝙊𝙄𝙉 𝙊𝙐𝙍 𝘾𝙃𝘼𝙉𝙉𝙀𝙇 🔥", url=f"https://t.me/{CHANNEL_USERNAME[1:]}")],
-            [InlineKeyboardButton("✅ 𝙄'𝙑𝙀 𝙅𝙊𝙄𝙉𝙀𝘿", callback_data="check_join")]
-        ]
-        reply_markup = InlineKeyboardMarkup(keyboard)
-        
-        start_text = """
-╔═══════════════════════╗
-  𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙏𝙤 𝙏𝙮𝙧𝙖𝙣𝙩 𝙈𝙖𝙨𝙨 𝘾𝙝𝙚𝙘𝙠𝙚𝙧
-╚═══════════════════════╝
-
-🔒 𝗔𝗖𝗖𝗘𝗦𝗦 𝗗𝗘𝗡𝗜𝗘𝗗
-
-⚠️ 𝙁𝙞𝙧𝙨𝙩 𝙅𝙤𝙞𝙣 𝙊𝙪𝙧 𝘾𝙝𝙖𝙣𝙣𝙚𝙡 𝘽𝙧𝙤 😎
-
-💎 𝗖𝗵𝗮𝗻𝗻𝗲𝗹: @Cyber_World_Xdd ⏳
-        """
-        
-        await update.message.reply_text(start_text, reply_markup=reply_markup)
+            [InlineKeyboardButton("🔥 JOIN OUR CHANNEL 🔥", url=f"https://t.me/{CHANNEL_USERNAME[1:]}")],
+            [InlineKeyboardButton("✅ I'VE JOINED", if callback_data == "verify_membership":
+        if await check_channel_membership(user_id, context):
+            await query.edit_message_text("✅ Joined! Loading menu...")
+            await asyncio.sleep(1)
+            # yahan tera original welcome message call kar dena
+            user_status = get_user_status(user_id)
+            text = f"""
+Welcome To Tyrant Mass Checker
+Access Granted
+Status: {user_status.upper()}
+            """
+            await query.edit_message_text(text)
+        else:
+            await query.answer("❌ Abhi join nahi kiya!", show_alert=True)
         return
     
     user_status = get_user_status(user_id)
